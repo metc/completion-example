@@ -1,9 +1,18 @@
 _compadd() {
-	COMPREPLY=($(compgen -W "$1" -- "${COMP_WORDS[COMP_CWORD]}"))
+	COMPREPLY=($(compgen -W "$1" -- "$cur"))
 }
 
 _main() {
-	_compadd "$(git --list-cmds=list-mainporcelain)"
+	local cur="${COMP_WORDS[COMP_CWORD]}"
+
+	case "$cur" in
+		--*)
+			_compadd "--help --version"
+			;;
+		*)
+			_compadd "$(git --list-cmds=list-mainporcelain)"
+			;;
+	esac
 }
 
 complete -F _main git
