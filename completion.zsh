@@ -8,7 +8,6 @@ _compadd() {
 }
 
 _git() {
-	local -a COMP_WORDS=($words)
-	local COMP_CWORD=$CURRENT
+	local cur=${words[CURRENT]}
 	_main
 }

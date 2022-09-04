@@ -3,8 +3,6 @@ _compadd() {
 }
 
 _main() {
-	local cur="${COMP_WORDS[COMP_CWORD]}"
-
 	case "$cur" in
 		--*)
 			_compadd "--help --version"
@@ -15,4 +13,9 @@ _main() {
 	esac
 }
 
-complete -F _main git
+_wrap_main() {
+	local cur="${COMP_WORDS[COMP_CWORD]}"
+	_main
+}
+
+complete -F _wrap_main git
