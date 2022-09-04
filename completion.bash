@@ -33,9 +33,13 @@ _main() {
 }
 
 _wrap_main() {
-	local cur="${COMP_WORDS[COMP_CWORD]}"
-	local -a words=("${COMP_WORDS[@]}")
-	local cword=$COMP_CWORD
+	local -a words
+	local cword cur
+
+	words=("${COMP_WORDS[@]}")
+	cword=$COMP_CWORD
+	cur="${words[cword]}"
+
 	_main
 }
 

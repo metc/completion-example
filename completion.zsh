@@ -1,6 +1,6 @@
 #compdef git
 
-complete() {}
+functions[complete]=:
 source completion.bash
 
 _compadd() {
@@ -8,8 +8,10 @@ _compadd() {
 }
 
 _git() {
-	local cword
-	local cur=${words[CURRENT]}
+	local cword cur
+
+	cur=${words[CURRENT]}
 	let cword=CURRENT-1
+
 	emulate ksh -c _main
 }
