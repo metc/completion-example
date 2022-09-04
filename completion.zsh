@@ -8,6 +8,8 @@ _compadd() {
 }
 
 _git() {
+	local cword
 	local cur=${words[CURRENT]}
-	_main
+	let cword=CURRENT-1
+	emulate ksh -c _main
 }
