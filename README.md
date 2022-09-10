@@ -12,4 +12,4 @@ called `_git` (or your command):
     cp completion.zsh ~/.zsh/_git
 
 This is a companion for my video: [Creating a shell completion from scratch
-(bash and zsh)](https://studio.youtube.com/video/B60JxbIcQys).
+(bash and zsh)](https://www.youtube.com/watch?v=B60JxbIcQys).
