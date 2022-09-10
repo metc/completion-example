@@ -15,3 +15,5 @@ _git() {
 
 	emulate ksh -c _main
 }
+
+_git
